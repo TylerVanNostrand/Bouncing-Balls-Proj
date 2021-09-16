@@ -54,7 +54,18 @@ while (balls.length < 25)   {
         random(0 + size, height - size);
         random(-7,7);
         random(-7,7);
-        'rgb(' + random(0,255) + ','+ random(0,255) + ',' + random(0,255) + ')',size
-        );
+        'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) + ')', size
+    );
     balls.push(ball);
+}
+
+function loop() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+    ctx.fillRect(0, 0, width, height);
+
+    for (let i = 0; i < balls.length; i++)  {
+        balls[i].draw();
+        balls[i].update();
+    }
+    requestAnimationFrame(loop);
 }
