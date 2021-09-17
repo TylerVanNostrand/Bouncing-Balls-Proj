@@ -61,7 +61,7 @@ Ball.prototype.collisionDetection = function()  {
 }
 
 let balls = [];
-while (balls.length < 90)   {
+while (balls.length < 80)   {
     let size = random(10,20);
     let ball = new Ball(
         random(0 + size, width - size),
